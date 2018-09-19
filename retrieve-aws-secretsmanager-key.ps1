@@ -2,7 +2,7 @@
 #For example storing a secret named test/posh with keys of:
 #username with a value of batman
 #password with a value of passwordisasentance
-#This is two seaprate key/value pairs in a single AWS Secrets Manager arn
+#This is two seaprate key/value pairs in a single AWS Secrets Manager resource
 #
 #Assumes the user configured to use aws cli has been granted at least read to the arn of the secret
 
