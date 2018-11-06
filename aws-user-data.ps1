@@ -74,7 +74,7 @@ New-NetFirewallRule -DisplayName "Allow in on 8080" -Direction Inbound -LocalPor
 New-WebAppPool -Name "site2"
 New-WebSite -Name "site2" -Port 80 -HostHeader "example.com" -PhysicalPath C:\WebApp\site2 -ApplicationPool site2
 
-#Add HTTPS binding to kagr site
+#Add HTTPS binding to site2 site
 New-WebBinding -Name "site2" -IPAddress "*" -Port 443 -HostHeader "example.com" -Protocol https
 
 #Add SSL Certificate to binding
