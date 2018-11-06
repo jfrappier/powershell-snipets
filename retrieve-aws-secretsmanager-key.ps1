@@ -10,7 +10,7 @@
 $PoshResponse = aws secretsmanager get-secret-value --secret-id test/posh | ConvertFrom-Json
 
 #Reads the SecretString which is still stored as JSON
-$Creds = $PostResponse.SecretString | ConvertFrom-Json
+$Creds = $PoshResponse.SecretString | ConvertFrom-Json
 
 #Expected results
 # PS C:\> $Creds
