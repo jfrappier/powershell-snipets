@@ -9,8 +9,11 @@
 #Gets key using aws cli and stores in $PoshResponse which is converted from JSON using ConvertFrom-Json cmdlet
 $PoshResponse = aws secretsmanager get-secret-value --secret-id test/posh | ConvertFrom-Json
 
-#Reads the SecretString which is still stored as JSON
+#Reads the SecretString which is still stored as JSON. See Expected results section below
 $Creds = $PoshResponse.SecretString | ConvertFrom-Json
+
+#If you need the password in secrure string format to support certain PowerShell cmdlets, you can convert the password into the correct format.
+$SecStrngPW = ConvertTo-SecureString -String $($Creds.password) -AsPlainText -Force
 
 #Expected results
 # PS C:\> $Creds
